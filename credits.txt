@@ -1,0 +1,40 @@
+
+Credits:
+
+Light effect:
+https://assetstore.unity.com/packages/tools/sprite-management/zippy-lights-2d-59866
+Shoot effect & fire effect & gun art:
+https://unitycodemonkey.com/video.php?v=fuGQFdhSPg4
+Dialog system:
+https://assetstore.unity.com/packages/tools/ai/dialogue-system-for-unity-11672
+Tween:
+DOTween:
+https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
+Grass background:
+https://assetstore.unity.com/packages/2d/environments/backyard-top-down-tileset-53854
+
+Background musics:
+Spook 2 by PeriTune
+https://soundcloud.com/sei_peridot/spook2
+Tragic Story - Myuu
+http:// www.youtube.com/watch?v=J3AmOGvhGKY
+Play With Me by Myuu
+https://soundcloud.com/myuu/play-with-me
+
+Sound Effects:
+Hunter sigh:
+https://freesound.org/people/Jagadamba/sounds/254326/
+Girl sigh:
+https://freesound.org/people/Hawkeye_Sprout/sounds/469096/
+Killed by monster:
+https://freesound.org/people/Robinhood76/sounds/66494/
+Gun shot:
+https://freesound.org/people/schots/sounds/382735/
+Hit hunter:
+https://freesound.org/people/Under7dude/sounds/163441/
+Hit monster:
+https://freesound.org/people/Michael%20Klier/sounds/318318/
+
+Story Ref:
+Little Snow-White
+https://www.pitt.edu/~dash/grimm053.html
