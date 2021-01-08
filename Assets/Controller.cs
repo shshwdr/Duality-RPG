@@ -27,19 +27,30 @@ public class Controller : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            Vector2 previousVelocity = -(isBall1Active ? ball1.previousVelocity() : ball2.previousVelocity());
-            ball1.toggleActive();
-            ball2.toggleActive();
-            isBall1Active = !isBall1Active;
+            //Vector2 previousVelocity = -(isBall1Active ? ball1.previousVelocity() : ball2.previousVelocity());
 
-            if (isBall1Active)
+            Move activeBall = isBall1Active ? ball1 : ball2;
+            if (activeBall.CanToggle())
             {
-                ball1.setVelocity(previousVelocity);
 
+
+                ball1.toggleActive();
+                ball2.toggleActive();
+                isBall1Active = !isBall1Active;
+
+                if (isBall1Active)
+                {
+                    //ball1.setVelocity(previousVelocity);
+
+                }
+                else
+                {
+                    //ball2.setVelocity(previousVelocity);
+                }
             }
             else
             {
-                ball2.setVelocity(previousVelocity);
+                //show failed image
             }
         }
     }
