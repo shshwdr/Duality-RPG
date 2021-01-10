@@ -11,7 +11,9 @@ public class Move : MonoBehaviour
     int speed = 100;
     bool rotationDir = false;
     int collideWithWater = 0;
+    int collideWithPlatform = 0;
     HingeJoint2D hingeJoint;
+    public float activeTorque = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,9 @@ public class Move : MonoBehaviour
         if (other.tag == "water")
         {
             collideWithWater++;
+        }else if (other.GetComponent<Platformer>())
+        {
+            collideWithPlatform++;
         }
     }
 
@@ -42,6 +47,10 @@ public class Move : MonoBehaviour
         if (other.tag == "water")
         {
             collideWithWater--;
+        }
+        else if (other.GetComponent<Platformer>())
+        {
+            collideWithPlatform--;
         }
         else if (other.GetComponent<Collectable>())
         {
@@ -56,37 +65,85 @@ public class Move : MonoBehaviour
     }
     public bool CanToggle()
     {
+        if (collideWithPlatform != 0)
+        {
+            return hitPlatformer();
+        }
         if (collideWithWater == 0)
         {
             return true;
         }
         return false;
     }
+
+    Rigidbody2D hitPlatformer()
+    {
+        return hitSpecialGround(Globals.Instance.platformers);
+    }
+    Rigidbody2D hitIceGround()
+    {
+        return hitSpecialGround(Globals.Instance.iceGrounds);
+    }
+    Rigidbody2D hitSpecialGround(List<GameObject> specialGrounds)
+    {
+        bool foundHingeObject = false;
+        foreach (GameObject platformer in specialGrounds)
+        {
+            Collider2D c = platformer.GetComponent<Collider2D>();
+            if (c.bounds.Contains(rigidbody.position))
+            {
+                // hingeJoint.connectedBody = platformer.GetComponent<Rigidbody2D>();
+                //foundHingeObject = true;
+                return platformer.GetComponent<Rigidbody2D>();
+            }
+        }
+        if (!foundHingeObject)
+        {
+            // hingeJoint.connectedBody = null;
+        }
+        return null;
+    }
+    public void Anchor()
+    {
+        hingeJoint.connectedBody = hitPlatformer();
+        hingeJoint.enabled = true;
+        rigidbody.drag = 0;
+    }
+
     void updateConstrains()
     {
         if (isActive)
         {
             // rigidbody.constraints = RigidbodyConstraints2D.None;
             hingeJoint.enabled = false;
+            rigidbody.drag = 0;
         }
         else
         {
-            bool foundHingeObject = false;
-            foreach (GameObject platformer in Globals.Instance.platformers)
+            //bool foundHingeObject = false;
+            //foreach (GameObject platformer in Globals.Instance.platformers)
+            //{
+            //    Collider2D c = platformer.GetComponent<Collider2D>();
+            //    if (collider.bounds.Intersects(c.bounds))
+            //    {
+            //        hingeJoint.connectedBody = platformer.GetComponent<Rigidbody2D>();
+            //        foundHingeObject = true;
+            //        break;
+            //    }
+            //}
+            //if (!foundHingeObject)
+            //{
+            //}
+            Rigidbody2D iceGround = hitIceGround();
+            if (iceGround)
             {
-                Collider2D c = platformer.GetComponent<Collider2D>();
-                if (collider.bounds.Intersects(c.bounds))
-                {
-                    hingeJoint.connectedBody = platformer.GetComponent<Rigidbody2D>();
-                    foundHingeObject = true;
-                    break;
-                }
+                rigidbody.drag = iceGround.GetComponent<IceGround>().linearDrag;
+
             }
-            if (!foundHingeObject)
+            else
             {
-                hingeJoint.connectedBody = null;
+                Anchor();
             }
-            hingeJoint.enabled = true;
             //rigidbody.velocity = Vector2.zero;
             // rigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
             // rigidbody.velocity = Vector2.zero;
@@ -103,7 +160,7 @@ public class Move : MonoBehaviour
     {
         if (isActive)
         {
-            GetComponent<Rigidbody2D>().AddTorque(100, ForceMode2D.Force);
+            GetComponent<Rigidbody2D>().AddTorque(activeTorque, ForceMode2D.Force);
             //Vector2 dir = (rigidbody.position - another.position).normalized;
             //Debug.Log("dir " + dir+" this position "+ rigidbody.position+" center position "+ another.position);
             //Vector2 perpen = Vector2.Perpendicular(dir);

@@ -27,7 +27,7 @@ public class Controller : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            //Vector2 previousVelocity = -(isBall1Active ? ball1.previousVelocity() : ball2.previousVelocity());
+            Vector2 previousVelocity = -(isBall1Active ? ball1.previousVelocity() : ball2.previousVelocity())/2;
 
             Move activeBall = isBall1Active ? ball1 : ball2;
             if (activeBall.CanToggle())
@@ -40,12 +40,12 @@ public class Controller : MonoBehaviour
 
                 if (isBall1Active)
                 {
-                    //ball1.setVelocity(previousVelocity);
+                    ball1.setVelocity(previousVelocity);
 
                 }
                 else
                 {
-                    //ball2.setVelocity(previousVelocity);
+                    ball2.setVelocity(previousVelocity);
                 }
             }
             else

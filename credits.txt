@@ -1,17 +1,13 @@
 
 Credits:
 
-Light effect:
-https://assetstore.unity.com/packages/tools/sprite-management/zippy-lights-2d-59866
-Shoot effect & fire effect & gun art:
-https://unitycodemonkey.com/video.php?v=fuGQFdhSPg4
-Dialog system:
-https://assetstore.unity.com/packages/tools/ai/dialogue-system-for-unity-11672
-Tween:
-DOTween:
-https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
-Grass background:
-https://assetstore.unity.com/packages/2d/environments/backyard-top-down-tileset-53854
+ground and water:
+https://bakudas.itch.io/generic-rpg-pack
+
+clouds:
+https://latenighcoffe.itch.io/2d-pixel-art-semi-realistic-clouds
+
+
 
 Background musics:
 Spook 2 by PeriTune
