@@ -1,20 +1,25 @@
-
 Credits:
 
 Art:
 
-Ground, water, enemy, chest and all the small decorations on land and in water:
+Ground, water, enemy, chest, and all the small decorations on land and in water:
 https://bakudas.itch.io/generic-rpg-pack
 Clouds:
 https://latenighcoffe.itch.io/2d-pixel-art-semi-realistic-clouds
 Coin and UI button:
-https://assetstore.unity.com/packages/2d/environments/free-platform-game-assets-85838
+https://assetstore.unity.com/packages/2d/environments/free-platform-game-assets-...
 Ice tile:
 https://craftpix.net/product/snow-2d-game-tileset-pixel-art/
+
 Heart:
 https://donhellsing.itch.io/heart1
 
-Background musics:
+Particle balls:
+https://codemanu.itch.io/pixelart-effect-pack​
+
+
+
+Background music:
 https://www.bensound.com/royalty-free-music
 
 Sound Effects:
@@ -32,5 +37,4 @@ https://freesound.org/people/Kastenfrosch/sounds/521973/
 Walk on ice:
 https://freesound.org/people/qubodup/sounds/177351/
 
-
-
+​
