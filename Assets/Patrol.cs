@@ -17,7 +17,7 @@ public class Patrol : MonoBehaviour
         if (!targetPosition)
         {
             targetPosition = transform.GetChild(0).GetComponentInChildren<Transform>();
-            Debug.Log("update target position " + targetPosition);
+            //Debug.Log("update target position " + targetPosition);
         }
         DOTween.Init();
         rigidbody = GetComponent<Rigidbody2D>();

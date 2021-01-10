@@ -1,36 +1,36 @@
 
 Credits:
 
-ground and water:
+Art:
+
+Ground, water, enemy, chest and all the small decorations on land and in water:
 https://bakudas.itch.io/generic-rpg-pack
-
-clouds:
+Clouds:
 https://latenighcoffe.itch.io/2d-pixel-art-semi-realistic-clouds
-
-
+Coin and UI button:
+https://assetstore.unity.com/packages/2d/environments/free-platform-game-assets-85838
+Ice tile:
+https://craftpix.net/product/snow-2d-game-tileset-pixel-art/
+Heart:
+https://donhellsing.itch.io/heart1
 
 Background musics:
-Spook 2 by PeriTune
-https://soundcloud.com/sei_peridot/spook2
-Tragic Story - Myuu
-http:// www.youtube.com/watch?v=J3AmOGvhGKY
-Play With Me by Myuu
-https://soundcloud.com/myuu/play-with-me
+https://www.bensound.com/royalty-free-music
 
 Sound Effects:
-Hunter sigh:
-https://freesound.org/people/Jagadamba/sounds/254326/
-Girl sigh:
-https://freesound.org/people/Hawkeye_Sprout/sounds/469096/
-Killed by monster:
-https://freesound.org/people/Robinhood76/sounds/66494/
-Gun shot:
-https://freesound.org/people/schots/sounds/382735/
-Hit hunter:
-https://freesound.org/people/Under7dude/sounds/163441/
-Hit monster:
-https://freesound.org/people/Michael%20Klier/sounds/318318/
 
-Story Ref:
-Little Snow-White
-https://www.pitt.edu/~dash/grimm053.html
+Coin collect:
+https://freesound.org/people/ProjectsU012/sounds/341695/
+Victory:
+https://freesound.org/people/rezyma/sounds/475148/
+Pop:
+https://freesound.org/people/InspectorJ/sounds/411642/
+Game over:
+https://freesound.org/people/Doctor_Jekyll/sounds/240195/
+Error:
+https://freesound.org/people/Kastenfrosch/sounds/521973/
+Walk on ice:
+https://freesound.org/people/qubodup/sounds/177351/
+
+
+

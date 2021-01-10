@@ -63,28 +63,37 @@ public class Move : MonoBehaviour
 
         }
     }
-    public bool CanToggle()
+    public int CanToggle()
     {
-        if (collideWithPlatform != 0)
+        if (hitIceGround())
         {
-            return hitPlatformer();
+            return 2;
+        }
+        if (hitPlatformer())
+        {
+            return 1;
         }
         if (collideWithWater == 0)
         {
-            return true;
+            return 1;
         }
-        return false;
+        return 0;
     }
 
-    Rigidbody2D hitPlatformer()
+    GameObject hitPlatformer()
     {
         return hitSpecialGround(Globals.Instance.platformers);
     }
-    Rigidbody2D hitIceGround()
+
+    GameObject hitButtons()
+    {
+        return hitSpecialGround(Globals.Instance.buttons);
+    }
+    GameObject hitIceGround()
     {
         return hitSpecialGround(Globals.Instance.iceGrounds);
     }
-    Rigidbody2D hitSpecialGround(List<GameObject> specialGrounds)
+    GameObject hitSpecialGround(List<GameObject> specialGrounds)
     {
         bool foundHingeObject = false;
         foreach (GameObject platformer in specialGrounds)
@@ -94,7 +103,7 @@ public class Move : MonoBehaviour
             {
                 // hingeJoint.connectedBody = platformer.GetComponent<Rigidbody2D>();
                 //foundHingeObject = true;
-                return platformer.GetComponent<Rigidbody2D>();
+                return platformer;
             }
         }
         if (!foundHingeObject)
@@ -105,7 +114,8 @@ public class Move : MonoBehaviour
     }
     public void Anchor()
     {
-        hingeJoint.connectedBody = hitPlatformer();
+        GameObject hittedPlatformer = hitPlatformer();
+        hingeJoint.connectedBody = hittedPlatformer ? hitPlatformer().GetComponent<Rigidbody2D>():null;
         hingeJoint.enabled = true;
         rigidbody.drag = 0;
     }
@@ -134,8 +144,8 @@ public class Move : MonoBehaviour
             //if (!foundHingeObject)
             //{
             //}
-            Rigidbody2D iceGround = hitIceGround();
-            if (iceGround)
+            GameObject iceGround = hitIceGround();
+            if (iceGround && iceGround.GetComponent<IceGround>().enabled)
             {
                 rigidbody.drag = iceGround.GetComponent<IceGround>().linearDrag;
 
@@ -143,6 +153,11 @@ public class Move : MonoBehaviour
             else
             {
                 Anchor();
+                GameObject hitButton = hitButtons();
+                if (hitButton)
+                {
+                    hitButton.GetComponent<PresseableButton>().Press();
+                }
             }
             //rigidbody.velocity = Vector2.zero;
             // rigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
